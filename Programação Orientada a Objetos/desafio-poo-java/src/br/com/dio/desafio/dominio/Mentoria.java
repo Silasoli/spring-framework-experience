@@ -5,6 +5,8 @@
 package br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -12,9 +14,18 @@ import java.time.LocalDate;
  */
 public class Mentoria extends Conteudo {
 
+    private Set<Tutor> tutoresDaMentoria = new HashSet<>();
     private LocalDate data;
 
     public Mentoria() {
+    }
+
+    public Set<Tutor> getTutoresDaMentoria() {
+        return tutoresDaMentoria;
+    }
+
+    public void setTutoresDaMentoria(Set<Tutor> tutoresDaMentoria) {
+        this.tutoresDaMentoria = tutoresDaMentoria;
     }
 
     public LocalDate getData() {

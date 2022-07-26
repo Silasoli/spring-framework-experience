@@ -15,12 +15,22 @@ import java.util.Set;
  * @author silas
  */
 public class Bootcamp {
+
     private String nome;
     private String descricao;
     private final LocalDate dataInicial = LocalDate.now();
     private final LocalDate datafinal = dataInicial.plusDays(45);
+    private Set<Tutor> tutoresDoBootcamp = new HashSet<>();
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
+
+    public Set<Tutor> getTutoresDoBootcamp() {
+        return tutoresDoBootcamp;
+    }
+
+    public void setTutoresDoBootcamp(Set<Tutor> tutoresDoBootcamp) {
+        this.tutoresDoBootcamp = tutoresDoBootcamp;
+    }
 
     public String getNome() {
         return nome;
@@ -95,5 +105,5 @@ public class Bootcamp {
         }
         return Objects.equals(this.conteudos, other.conteudos);
     }
-    
+
 }
