@@ -5,6 +5,7 @@
 package com.dio.springboottest.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -13,10 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TestController {
-    
-    @GetMapping("/test")
-    public String saudacao(String nome){
+
+    @GetMapping("/test/unit")
+    public String saudacao(String nome) {
         return String.format("Bem vindo, %s", nome);
     }
-    
+
+    @GetMapping("/test/int")
+    public String saudacao2(@RequestParam(name = "nome", defaultValue = "DIO") String nome) {
+        return String.format("Bem-vindo, %s", nome);
+    }
 }
